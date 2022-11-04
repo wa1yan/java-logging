@@ -20,8 +20,6 @@ public class Resources {
 	@Autowired
 	private MessageService messageService;
 	Logger logger = LoggerFactory.getLogger(Resources.class);
-	
-	//private static final Logger LOGGER = LogManager.getLogger(Resources.class);
 
 	@GetMapping("/hello")
 	public ResponseEntity<String> hello() {
