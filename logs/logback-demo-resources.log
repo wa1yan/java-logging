@@ -1,0 +1,12 @@
+2022-11-04 09:07:51.399  INFO --- [           main] boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+2022-11-04 09:07:51.434  INFO --- [           main] g.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8080"]
+2022-11-04 09:07:51.436  INFO --- [           main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2022-11-04 09:07:51.437  INFO --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-04 09:07:51.662  INFO --- [           main] e.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2022-11-04 09:07:51.665  INFO --- [           main] ntext.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1680 ms
+2022-11-04 09:07:52.188  INFO --- [           main] g.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8080"]
+2022-11-04 09:07:52.229  INFO --- [           main] boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-04 09:08:04.379  INFO --- [http-nio-8080-exec-1] e.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-04 09:08:04.380  INFO --- [http-nio-8080-exec-1] gframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2022-11-04 09:08:04.381  INFO --- [http-nio-8080-exec-1] gframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2022-11-04 09:10:18.565  INFO --- [http-nio-8080-exec-6] com.waiyanhtet.demo.controller.Resources : Hello from resources.

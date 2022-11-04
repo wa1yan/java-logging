@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+	                %-30(%d  %p) %-40.30([%t] %C): %msg%n%throwable
+	         </Pattern>
+         </layout>
+	</appender>
+
+
+	<appender name="AllLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback-demo-all.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.25t] %-40.40c{1.} : %m%n%throwable</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/logback-demo-all-%d{yyyy-MM-dd}.%i-logback.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="ResourceLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback-demo-resources.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.25t] %-40.40c{1.} : %m%n%throwable</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/logback-demo-resources-%d{yyyy-MM-dd}.%i-logback.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="ServiceLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback-demo-services.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.25t] %-40.40c{1.} : %m%n%throwable</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/logback-demo-services-%d{yyyy-MM-dd}.%i-logback.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="RepoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback-demo-repos.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p --- [%15.25t] %-40.40c{1.} : %m%n%throwable</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/logback-demo-repos-%d{yyyy-MM-dd}.%i-logback.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="AllLog"/>
+		<appender-ref ref="ResourceLog"/>
+		<appender-ref ref="ServiceLog"/>
+		<appender-ref ref="RepoLog"/>
+		<appender-ref ref="Console"/>
+	</root>
+
+	<logger name="com.waiyanhtet.demo" level="DEBUG" additivity="false">
+		<appender-ref ref="AllLog"/>
+		<appender-ref ref="Console"/>
+	</logger>
+	<logger name="com.waiyanhtet.demo.controller" level="DEBUG" additivity="true">
+		<appender-ref ref="ResourceLog"/>
+	</logger>
+	<logger name="com.waiyanhtet.demo.service" level="DEBUG" additivity="true">
+		<appender-ref ref="ServiceLog"/>
+	</logger>
+	<logger name="com.waiyanhtet.demo.repo" level="DEBUG" additivity="true">
+		<appender-ref ref="RepoLog"/>
+	</logger>
+</configuration>
